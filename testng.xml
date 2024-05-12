@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="saucedemo">
+    <listeners>
+        <listener class-name="com.preassessment.listener"/>
+    </listeners>
+   
+    <test name="login">
+     <parameter name="userName" value="standard_user"/>
+	<parameter name="password" value="secret_sauce"/>
+    <classes>      
+		<class name="com.preassessment.sausceDemo"/>
+    </classes>
+  </test>
+</suite> 
