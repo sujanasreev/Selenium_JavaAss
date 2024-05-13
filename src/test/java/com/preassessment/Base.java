@@ -19,7 +19,7 @@ public class Base {
 
 	public WebDriver driver;
 	public LoginPage loginPage;
-	String URL = "https://www.saucedemo.com/";
+	String URL;
 
 	public static String captureScreenshot(WebDriver driver,String testCaseName) throws IOException
 	{
@@ -34,6 +34,7 @@ public class Base {
 	@BeforeSuite
 	public LoginPage initialize() {
 		 //WebDriverManager.chromedriver().setup();
+		URL = "https://www.saucedemo.com/";
 		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
