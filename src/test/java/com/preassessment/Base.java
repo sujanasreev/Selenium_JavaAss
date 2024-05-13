@@ -2,7 +2,7 @@ package com.preassessment;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -10,9 +10,6 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.*;
 
 
@@ -42,7 +39,7 @@ public class Base {
 		options.addArguments("--remote-allow-origins=*");
 		 driver = new ChromeDriver(options);  
 		 driver.manage().window().maximize();
-		 driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    loginPage = new LoginPage(driver);
 		loginPage.goTo(URL);
 		return loginPage;
@@ -53,8 +50,7 @@ public class Base {
 	 @AfterClass 
 	 public void tearDown() {
 
-			driver.quit();
-			 driver.close(); 
+			 driver.close();
 			 
 	 }
 	 
