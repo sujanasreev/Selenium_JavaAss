@@ -1,6 +1,7 @@
 This is from child branch
 this is from master branch
 Editing again to test
+again editing from child branch
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="saucedemo">
